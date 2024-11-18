@@ -10,7 +10,7 @@ app.use(cors());
 
 // application routes 
 
-app.use('api/v1/students',studentRouters)
+app.use('/api/v1/students',studentRouters)
 
 const getAconcroller = (req: Request, res: Response)=>{
   res.send('Hello W');

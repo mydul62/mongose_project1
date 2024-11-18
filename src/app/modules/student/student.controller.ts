@@ -19,8 +19,44 @@ const createStudent = async (req: Request, res: Response) => {
   console.log(error)
  }
 };
+const findStudents = async (req: Request, res: Response) => {
+ try {
+  const result = await studentService.findStudentsFromDB();
+
+  //  sernd response
+
+  res.status(200).json({
+    success: true,
+    message: 'seccessfully found students',
+    data: result,
+  });
+  
+ } catch (error) {
+  console.log(error)
+ }
+};
+const findStudent = async (req: Request, res: Response) => {
+ try {
+  const {id:studentID}= req.params;
+  console.log(studentID)
+  const result = await studentService.findAStudentFromDB(studentID);
+
+  //  sernd response
+
+  res.status(200).json({
+    success: true,
+    message: 'seccessfully found students',
+    data: result,
+  });
+  
+ } catch (error) {
+  console.log(error)
+ }
+};
 
 
 export const studentController = {
   createStudent,
+  findStudents,
+  findStudent
 };

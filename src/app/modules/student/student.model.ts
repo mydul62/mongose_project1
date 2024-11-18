@@ -1,4 +1,4 @@
-import mongoose, { model, Schema} from 'mongoose';
+import { model, Schema} from 'mongoose';
 import { Gurdian, LocalGurdian, Student, UserName } from './student.interface';
 
 const userNameSchema = new Schema<UserName>({
