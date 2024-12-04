@@ -1,3 +1,4 @@
+import { Types } from "mongoose";
 
 export type UserName= {
   firstName: string;
@@ -19,6 +20,8 @@ export type Gurdian = {
  }
 export type Student = {
   id: string;
+  user:Types.ObjectId;
+  password: string;
   name:UserName;
   gender:'male' | 'female';
   email: string;
@@ -31,6 +34,7 @@ export type Student = {
   gurdian:Gurdian;
   localGurdian:LocalGurdian;
   profileImage?:string;
-  isActive:'active' | 'inactive';
+  admissionSemester: Types.ObjectId;
+  isDeleted: boolean;
 };
 
